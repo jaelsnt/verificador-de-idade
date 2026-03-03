@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade</title>
+</head>
+<body>
+
+    <h2>Verificador de Idade</h2>
+
+    <input type="number" id="idadeDela" placeholder="Idade dela">
+    <input type="number" id="idadeDele" placeholder="Sua idade">
+    <button onclick="verificarIdade()">Verificar</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarIdade() {
+            // Capturando os valores dos campos
+            let idadeDela = parseFloat(document.getElementById("idadeDela").value);
+            let idadeDele = parseFloat(document.getElementById("idadeDele").value);
+            let resultado = document.getElementById("resultado");
+
+            // Lógica
+            if (idadeDela < 14) {
+                if (idadeDele >= 18) {
+                    resultado.innerText = "Você pode ser preso se alguém te denunciar!";
+                } else {
+                    resultado.innerText = "Você tem que pedir permissão aos pais dela!";
+                }
+            } else if (idadeDela >= 18) {
+                resultado.innerText = "Você pode namorar com ela sem a permissão dos pais!";
+            } else {
+                resultado.innerText = "Você deve pedir permissão aos pais dela!";
+            }
+        }
+    </script>
+</body>
+</html>
